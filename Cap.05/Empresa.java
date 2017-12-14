@@ -14,7 +14,7 @@ public Empresa() {
 
 public void adiciona(Funcionario pessoa) {
     if (temp == empregados.length) {
-        System.out.println("Array esta cheio");
+        System.out.println("Array com limite esgotado! ");
     } else {
         empregados[temp] = pessoa;
         temp++;
@@ -23,7 +23,7 @@ public void adiciona(Funcionario pessoa) {
 
 public void mostraEmpregados() {
     for (int i = 0; i < temp; i++) {
-        System.out.println("\nFuncionario N." + (i+1) + "\n");
+        System.out.println("\nFuncionario Nº: " + (i+1) + "\n");
         empregados[i].mostra();
     }
 }
