@@ -1,12 +1,18 @@
 
 package banco;
 public class Funcionario {
-    String nome;
-    String departamento;
-    String data;
-    String rg;
-    double salario;
-
+   private String nome;
+   private String departamento;
+   private String data;
+   private String rg;
+   private double salario;
+   private int quantidadeFuncionario = 0;
+   private int analisa;
+    
+    public Funcionario() {
+        this.analisa = quantidadeFuncionario+1;
+        quantidadeFuncionario++;
+    }
     public String getNome() {
         return nome;
     }

@@ -1,40 +1,50 @@
-
 package banco;
 
-
 public class Empresa {
- Funcionario[] empregados;
- String cnpj;
- int temp;
+    private Funcionario[] empregados;
+    private String cnpj;
+    private int temp;
 
-public Empresa() {
-    this.temp = 0;
-    empregados = new Funcionario[10];
-}
-
-public void adiciona(Funcionario pessoa) {
-    if (temp == empregados.length) {
-        System.out.println("Array esta cheio");
-    } else {
-        empregados[temp] = pessoa;
-        temp++;
+    public Empresa() {
+        this.temp = 0;
+        empregados = new Funcionario[10];
     }
-}
 
-public void mostraEmpregados() {
-    for (int i = 0; i < temp; i++) {
-        System.out.println("\nFuncionario N." + (i+1) + "\n");
-        empregados[i].mostra();
+    public Empresa(int tamanho) {
+        this.temp = 0;
+        empregados = new Funcionario[tamanho];
     }
-}
 
-public boolean contem(Funcionario pessoa) {
-    for (int i = 0; i < temp; i++) {
-        if (pessoa == empregados[i]) {
-            return true;
+    public String getCnpj() {
+        return cnpj;
+    }
+
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
+
+    public void adiciona(Funcionario pessoa) {
+        if (temp == empregados.length) {
+            System.out.println("Array com limite esgotado!");
+        } else {
+            empregados[temp] = pessoa;
+            temp++;
         }
     }
-    return false;
-}
-}
 
+    public void mostraEmpregados() {
+        for (int i = 0; i < temp; i++) {
+            System.out.println("\nFuncionario Nº: " + (i+1) + "\n");
+            empregados[i].mostra();
+        }
+    }
+
+    public boolean contem(Funcionario pessoa) {
+        for (int i = 0; i < temp; i++) {
+            if (pessoa == empregados[i]) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
